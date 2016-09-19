@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "NMSSH.h"
-
+#import "LVSFTP-Swift.h"
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSLog(@"Hello, World!");
@@ -36,9 +36,13 @@ int main(int argc, const char * argv[]) {
             
             [session disconnect];
         }
-        NSRunLoop *currLoop = [NSRunLoop currentRunLoop];
-        [currLoop addPort:[NSPort port] forMode:NSDefaultRunLoopMode];
-        [currLoop run];
+        TestCommand *aCommand = [[TestCommand alloc] init];
+        [aCommand lsCommand];
+        id abc =  [aCommand cmsCommand];
+        if ([abc isKindOfClass:[NSString class]]) {
+            NSLog(@"%@",abc);
+        }
+
     }
     return 0;
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9DE246E61D8F99B900EC5150 /* command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE246E51D8F99B900EC5150 /* command.swift */; };
 		9DEBA4D31D8EB93800E21762 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DEBA4D21D8EB93800E21762 /* main.m */; };
 		9DEBA54A1D8EB95400E21762 /* NMSSHLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DEBA4DF1D8EB95400E21762 /* NMSSHLogger.m */; };
 		9DEBA54B1D8EB95400E21762 /* socket_helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DEBA4E11D8EB95400E21762 /* socket_helper.m */; };
@@ -37,6 +38,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9DE246E41D8F99B900EC5150 /* LVSFTP-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LVSFTP-Bridging-Header.h"; sourceTree = "<group>"; };
+		9DE246E51D8F99B900EC5150 /* command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = command.swift; sourceTree = "<group>"; };
 		9DEBA4CF1D8EB93800E21762 /* LVSFTP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LVSFTP; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DEBA4D21D8EB93800E21762 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9DEBA4DA1D8EB95400E21762 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -183,7 +186,9 @@
 			isa = PBXGroup;
 			children = (
 				9DEBA4D21D8EB93800E21762 /* main.m */,
+				9DE246E51D8F99B900EC5150 /* command.swift */,
 				9DEBA4D91D8EB95400E21762 /* NMSSH */,
+				9DE246E41D8F99B900EC5150 /* LVSFTP-Bridging-Header.h */,
 			);
 			path = LVSFTP;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 				TargetAttributes = {
 					9DEBA4CE1D8EB93800E21762 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -442,6 +448,7 @@
 				9DEBA54E1D8EB95400E21762 /* NMSSHChannel.m in Sources */,
 				9DEBA54A1D8EB95400E21762 /* NMSSHLogger.m in Sources */,
 				9DEBA54F1D8EB95400E21762 /* NMSSHConfig.m in Sources */,
+				9DE246E61D8F99B900EC5150 /* command.swift in Sources */,
 				9DEBA54B1D8EB95400E21762 /* socket_helper.m in Sources */,
 				9DEBA54C1D8EB95400E21762 /* NMSFTP.m in Sources */,
 				9DEBA5511D8EB95400E21762 /* NMSSHSession.m in Sources */,
@@ -542,24 +549,33 @@
 		9DEBA4D71D8EB93800E21762 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LVSFTP/NMSSH/NMSSH-OSX/Libraries/lib",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LVSFTP/LVSFTP-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		9DEBA4D81D8EB93800E21762 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LVSFTP/NMSSH/NMSSH-OSX/Libraries/lib",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LVSFTP/LVSFTP-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -582,6 +598,7 @@
 				9DEBA4D81D8EB93800E21762 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
